@@ -1,0 +1,46 @@
+/* LAYOUT */
+.wrapper {
+    height: 100vh;
+    width: 100%;
+    background-color: #1d2d3c;
+}
+
+header {
+    height: 120px;
+    background-color: #06131f;
+}
+
+.big-container {
+    height: calc(100vh - 120px);
+    overflow-y: auto;
+    padding: 2rem;
+}
+
+.container {
+    width: 90%;
+}
+
+.row {
+    gap: 4rem;
+}
+
+.col-3 {
+    background-color: #112030;
+    border-radius: 10px; 
+}
+
+.cs-card {
+    padding-top: 2rem;
+}
+
+.card-text-content {
+    color: white;
+    padding: 1rem 0;
+}
+
+.cs-card img {
+    background-color: #112030;
+    display: block;
+    width: 200px;
+    height: 200px;
+}

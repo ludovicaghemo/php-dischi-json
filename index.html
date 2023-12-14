@@ -1,40 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dischi</title>
-    
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-    <!-- Axios -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dischi</title>
 
-    <!-- Vue -->
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-  </head>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-  <body>
-    <div id="app">
+  <!-- Custom Style -->
+  <link rel="stylesheet" href="style/style.css">
+
+  <!-- Axios -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
+    integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- Vue -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <div class="wrapper">
+
       <header></header>
-      <main>
-        <div class="container">
-            <div class="row">
-                <div class="col" v-for="(disco, index) in listaDischi" :key="index">
-                    <div class="card">
-                        <h3>{{ disco.title }}</h3>
-                        <p>{{ disco.author }}</p>
-                        <h4>{{ disco.year }}</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-    </div>
 
-    <!-- Custom Script -->
-    <script src="js/script.js"></script>
-  </body>
-  
+      <main>
+        <div class="big-container">
+          <div class="container mt-5">
+            <div class="row d-flex flex-wrap justify-content-center">
+              <div class="col-3" v-for="(disco, index) in listaDischi" :key="index">
+                <!-- Card -->
+                <div class="cs-card text-center d-flex flex-wrap justify-content-center">
+                  <img :src="disco.poster" alt="">
+                  <div class="card-text-content">
+                    <h4>{{ disco.title }}</h4>
+                    <p>{{ disco.author }}</p>
+                    <h5>{{ disco.year }}</h5>
+                  </div>
+                  <!-- /Card Text Content -->
+                </div>
+                <!-- /Card -->
+              </div>
+            </div>
+          </div>
+          <!-- /Container -->
+        </div>
+        <!-- /Big Container -->
+      </main>
+    </div>
+    <!-- /Wrapper -->
+  </div>
+
+  <!-- Custom Script -->
+  <script src="js/script.js"></script>
+</body>
+
 </html>
